@@ -8,26 +8,25 @@ task = input("Enter your task: ")
 priority = input("Priority (high/medium/low): ").lower()
 time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Loop requirement (purpose: allow processing inside loop)
+# Loop requirement
 for _ in range(1):
 
     # Match Case for priority levels
     match priority:
         case "high":
-            base_message = f"'{task}' is a HIGH priority task"
+            base_message = f"'{task}' is a high priority task"
         case "medium":
-            base_message = f"'{task}' is a MEDIUM priority task"
+            base_message = f"'{task}' is a medium priority task"
         case "low":
-            base_message = f"'{task}' is a LOW priority task"
+            base_message = f"'{task}' is a low priority task"
         case _:
-            base_message = f"The priority level for '{task}' is UNKNOWN"
+            base_message = f"The priority level for '{task}' is unknown"
 
     # Time sensitivity check
     if time_bound == "yes":
         final_message = base_message + " that requires immediate attention today!"
     else:
-        final_message = base_message + ". Complete it when you have free time."
+        final_message = base_message + ". Consider completing it when you have free time."
 
-# Final customized reminder
-print("\nCustomized Reminder:")
-print(final_message)
+# ✔ REQUIRED FORMAT: Must begin with "Reminder:"
+print(f"Reminder: {final_message}")
